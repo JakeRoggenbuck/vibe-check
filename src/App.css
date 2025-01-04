@@ -1,0 +1,31 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.stars {
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.star {
+  color: #EEEDE4;
+}
+
+.star.selected {
+  color: #FFD60A;
+  filter: drop-shadow(2px 2px 1em #FFD60AFF);
+}
+
+.bold {
+	font-weight: bold;
+}
