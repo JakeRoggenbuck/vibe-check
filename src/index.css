@@ -5,8 +5,8 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  /* background-color: #fefae0; */
-  background-color: #f6e3b4;
+  /* background-color: #FEFAE0; */
+  background-color: #F6E3B4;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,7 +15,7 @@
 }
 
 .shrikhand-regular {
-  color: #ffa5ab;
+  color: #FFA5AB;
   font-family: 'Shrikhand', serif;
   font-weight: 400;
   font-style: normal;
@@ -24,7 +24,7 @@
 }
 
 .shrikhand-regular:hover {
-  filter: drop-shadow(0 0 1em #ffa5ab);
+  filter: drop-shadow(0 0 1em #FFA5AB);
 }
 
 a {

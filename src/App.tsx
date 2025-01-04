@@ -28,13 +28,18 @@ function App() {
             </span>
           ))}
         </div>
+
         <input 
+		className="input-field"
           type="text" 
           placeholder="Leave a comment..." 
           value={comment} 
           onChange={(e) => setComment(e.target.value)} 
         />
-        <button onClick={handleSubmit}>Submit</button>
+
+		<br/>
+
+        <button className="submit-button" onClick={handleSubmit}>Submit</button>
       </div>
     </>
   );
