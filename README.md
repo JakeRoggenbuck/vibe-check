@@ -2,6 +2,8 @@
 
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://github.com/JakeRoggenbuck?tab=repositories&q=&type=&language=typescript)
 [![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB&style=for-the-badge)](#)
+<!-- [![Build](https://img.shields.io/github/actions/workflow/status/jakeroggenbuck/vibe-check/npm.yml?branch=main&style=for-the-badge)](https://github.com/JakeRoggenbuck/vibe-check/actions) -->
+
 
 ![image](https://github.com/user-attachments/assets/c3585710-0d59-4a47-88ff-701ccebe3bf7)
 
