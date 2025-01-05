@@ -24,5 +24,6 @@ jobs:
 
     - name: Build
       run: |
+        cd ../../frontend-one
         npm install
         npm run build
