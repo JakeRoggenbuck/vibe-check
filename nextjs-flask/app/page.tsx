@@ -35,7 +35,11 @@ export default function Home() {
       const data = await response.json();
       console.log("Success:", data);
     } catch (error) {
-      console.error("Error:", error.message);
+      if (error instanceof Error) {
+        console.error("Error:", error.message);
+      } else {
+        console.error("An unknown error occurred");
+      }
     }
 
     setSubmitted(true);
