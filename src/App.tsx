@@ -28,8 +28,8 @@ function App() {
   };
 
   const find_event = (name: string) => {
-	return name !== "";
-  }
+    return name !== "";
+  };
 
   function auto_height(elem: any) {
     elem.style.height = "1px";
