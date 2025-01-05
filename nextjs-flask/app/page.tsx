@@ -103,9 +103,8 @@ export default function Home() {
 
                 <textarea
                   rows={2}
-                  class="auto_height"
+                  className="auto_height"
                   onInput={auto_height_func}
-                  type="text"
                   placeholder="Leave a comment..."
                   value={comment}
                   onChange={(e) => setComment(e.target.value)}
