@@ -39,37 +39,46 @@ function App() {
         {!submitted ? (
           <>
             <h2 className="bold">Share how you're feeling! — {context}</h2>
-            <div className="stars">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <span
-                  key={star}
-                  className={
-                    star <= (hover || rating) ? "star selected" : "star"
-                  }
-                  onClick={() => setRating(star)}
-                  onMouseEnter={() => setHover(star)}
-                  onMouseLeave={() => setHover(rating)}
-                >
-                  &#9733;
-                </span>
-              ))}
-            </div>
 
-            <textarea
-              rows="2"
-              class="auto_height"
-              onInput="auto_height(this)"
-              type="text"
-              placeholder="Leave a comment..."
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-            />
+            {context !== "" ? (
+              <>
+                <div className="stars">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <span
+                      key={star}
+                      className={
+                        star <= (hover || rating) ? "star selected" : "star"
+                      }
+                      onClick={() => setRating(star)}
+                      onMouseEnter={() => setHover(star)}
+                      onMouseLeave={() => setHover(rating)}
+                    >
+                      &#9733;
+                    </span>
+                  ))}
+                </div>
 
-            <br />
+                <textarea
+                  rows="2"
+                  class="auto_height"
+                  onInput="auto_height(this)"
+                  type="text"
+                  placeholder="Leave a comment..."
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                />
 
-            <button className="submit-button" onClick={handleSubmit}>
-              Submit
-            </button>
+                <br />
+
+                <button className="submit-button" onClick={handleSubmit}>
+                  Submit
+                </button>
+              </>
+            ) : (
+              <>
+                <h2 className="bold">Event "{context}" not found.</h2>
+              </>
+            )}
           </>
         ) : (
           <>
