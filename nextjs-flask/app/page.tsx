@@ -13,20 +13,21 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async () => {
+    const url = process.env.NEXT_PUBLIC_API_URL
+      ? `${process.env.NEXT_PUBLIC_API_URL}/api/python/response`
+      : "api/python/response";
+
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/python/response`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            rating: rating,
-            comment: comment,
-          }),
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify({
+          rating: rating,
+          comment: comment,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to submit data");
