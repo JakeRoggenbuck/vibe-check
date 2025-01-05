@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Shrikhand&display=swap');
+
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+    font-family: 'Shrikhand', cursive;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  /* background-color: #FEFAE0; */
+  background-color: #f6e3b4;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.shrikhand-regular {
+  color: #ffa5ab;
+  font-family: "Shrikhand", serif;
+  font-weight: 400;
+  font-style: normal;
+  will-change: filter;
+  transition: filter 300ms;
+  font-size: 64px;
+}
+
+.shrikhand-regular:hover {
+  filter: drop-shadow(0 0 1em #ffa5ab);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
