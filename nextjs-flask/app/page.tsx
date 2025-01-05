@@ -67,7 +67,7 @@ export default function Home() {
     return name !== "";
   };
 
-  function auto_height(elem: any) {
+  function auto_height_func(elem: React.FormEvent<HTMLTextAreaElement>) {
     if (typeof elem !== "undefined") {
       elem.style.height = "1px";
       elem.style.height = `${elem.scrollHeight}px`;
@@ -101,9 +101,9 @@ export default function Home() {
                 </div>
 
                 <textarea
-                  rows="2"
+                  rows={2}
                   class="auto_height"
-                  onInput={auto_height(this)}
+                  onInput={auto_height_func}
                   type="text"
                   placeholder="Leave a comment..."
                   value={comment}
