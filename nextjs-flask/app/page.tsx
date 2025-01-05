@@ -78,6 +78,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen text-center">
+		<div className="flex-grow py-64">
       <h1 className="shrikhand-regular">Vibe Check</h1>
       <div className="card">
         {!submitted ? (
@@ -133,6 +134,10 @@ export default function Home() {
           </>
         )}
       </div>
+      </div>
+		<div className="w-full text-center mt-auto py-6">
+			<a href="https://forms.gle/K7KDopHZ47tCvARE7"><h2 className="bold red-text">Feedback Form</h2></a>
+		</div>
     </div>
   );
 }

@@ -30,6 +30,10 @@
   font-weight: bold;
 }
 
+.red-text {
+  color: #ffa5ab;
+}
+
 .auto_height {
   width: 100%;
   color: #333;
