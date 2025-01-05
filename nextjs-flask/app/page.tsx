@@ -67,8 +67,9 @@ export default function Home() {
     return name !== "";
   };
 
-  function auto_height_func(elem: React.FormEvent<HTMLTextAreaElement>) {
-    if (typeof elem !== "undefined") {
+  function auto_height_func(event: React.FormEvent<HTMLTextAreaElement>) {
+    const elem = event.target as HTMLTextAreaElement;
+    if (elem) {
       elem.style.height = "1px";
       elem.style.height = `${elem.scrollHeight}px`;
     }
