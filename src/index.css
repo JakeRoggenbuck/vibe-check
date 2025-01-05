@@ -21,6 +21,7 @@
   font-style: normal;
   will-change: filter;
   transition: filter 300ms;
+  font-size: 64px;
 }
 
 .shrikhand-regular:hover {

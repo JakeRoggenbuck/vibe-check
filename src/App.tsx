@@ -7,6 +7,7 @@ function App() {
   const [comment, setComment] = useState("");
 
   const [context, setContext] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const queryParameters = new URLSearchParams(window.location.search);
@@ -18,41 +19,63 @@ function App() {
   }, []);
 
   const handleSubmit = () => {
-    alert(`Rating: ${rating}\nComment: ${comment}`);
+    console.log(`Rating: ${rating}\nComment: ${comment}`);
+	setSubmitted(true);
   };
+
+  const handleSubmitAgain = () => {
+	setSubmitted(false);
+  };
+
+  function auto_height(elem: any) {
+    elem.style.height = '1px';
+    elem.style.height = `${elem.scrollHeight}px`;
+  }
 
   return (
     <>
       <h1 className="shrikhand-regular">Vibe Check</h1>
       <div className="card">
-        <h3 className="bold">Share how you're feeling! — {context}</h3>
-        <div className="stars">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <span
-              key={star}
-              className={star <= (hover || rating) ? "star selected" : "star"}
-              onClick={() => setRating(star)}
-              onMouseEnter={() => setHover(star)}
-              onMouseLeave={() => setHover(rating)}
-            >
-              &#9733;
-            </span>
-          ))}
-        </div>
 
-        <input
-          className="input-field"
-          type="text"
-          placeholder="Leave a comment..."
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
+		{!submitted ? <>
+<h2 className="bold">Share how you're feeling! — {context}</h2>
+<div className="stars">
+  {[1, 2, 3, 4, 5].map((star) => (
+	<span
+	  key={star}
+	  className={star <= (hover || rating) ? "star selected" : "star"}
+	  onClick={() => setRating(star)}
+	  onMouseEnter={() => setHover(star)}
+	  onMouseLeave={() => setHover(rating)}
+	>
+	  &#9733;
+	</span>
+  ))}
+</div>
 
-        <br />
+<textarea 
+  rows="2" 
+  class="auto_height" 
+  onInput="auto_height(this)"
+  type="text"
+  placeholder="Leave a comment..."
+  value={comment}
+  onChange={(e) => setComment(e.target.value)}
+/>
 
-        <button className="submit-button" onClick={handleSubmit}>
-          Submit
-        </button>
+<br />
+
+<button className="submit-button" onClick={handleSubmit}>
+  Submit
+</button>
+
+		</> : <>
+<h2 className="bold">Thanks for sharing! — {context}</h2>
+
+<button className="submit-button" onClick={handleSubmitAgain}>
+  Submit again
+</button>
+		</>}
       </div>
     </>
   );

@@ -30,7 +30,8 @@
   font-weight: bold;
 }
 
-.input-field {
+.auto_height {
+  width: 100%;
   color: #333;
   background-color: #eeede4;
   padding: 10px;
