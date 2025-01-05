@@ -27,6 +27,10 @@ function App() {
     setSubmitted(false);
   };
 
+  const find_event = (name: string) => {
+	return name !== "";
+  }
+
   function auto_height(elem: any) {
     elem.style.height = "1px";
     elem.style.height = `${elem.scrollHeight}px`;
@@ -40,7 +44,7 @@ function App() {
           <>
             <h2 className="bold">Share how you're feeling! — {context}</h2>
 
-            {context !== "" ? (
+            {find_event(context) ? (
               <>
                 <div className="stars">
                   {[1, 2, 3, 4, 5].map((star) => (
