@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import './App.css';
+import "./App.css";
 
 function App() {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
-  const [comment, setComment] = useState('');
+  const [comment, setComment] = useState("");
 
-  const [context, setContext] = useState('');
+  const [context, setContext] = useState("");
 
   useEffect(() => {
     const queryParameters = new URLSearchParams(window.location.search);
@@ -30,7 +30,7 @@ function App() {
           {[1, 2, 3, 4, 5].map((star) => (
             <span
               key={star}
-              className={star <= (hover || rating) ? 'star selected' : 'star'}
+              className={star <= (hover || rating) ? "star selected" : "star"}
               onClick={() => setRating(star)}
               onMouseEnter={() => setHover(star)}
               onMouseLeave={() => setHover(rating)}
@@ -40,17 +40,19 @@ function App() {
           ))}
         </div>
 
-        <input 
-		className="input-field"
-          type="text" 
-          placeholder="Leave a comment..." 
-          value={comment} 
-          onChange={(e) => setComment(e.target.value)} 
+        <input
+          className="input-field"
+          type="text"
+          placeholder="Leave a comment..."
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
         />
 
-		<br/>
+        <br />
 
-        <button className="submit-button" onClick={handleSubmit}>Submit</button>
+        <button className="submit-button" onClick={handleSubmit}>
+          Submit
+        </button>
       </div>
     </>
   );

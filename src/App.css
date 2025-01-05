@@ -18,35 +18,35 @@
 }
 
 .star {
-  color: #EEEDE4;
+  color: #eeede4;
 }
 
 .star.selected {
-  color: #FFD60A;
-  filter: drop-shadow(2px 2px 1em #FFD60AFF);
+  color: #ffd60a;
+  filter: drop-shadow(2px 2px 1em #ffd60aff);
 }
 
 .bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .input-field {
-	color: #333;
-	background-color: #EEEDE4;
-	padding: 10px;
-	margin: 10px;
-	margin-top: 20px;
-	border-radius: 6px;
-	border-width: 0px;
+  color: #333;
+  background-color: #eeede4;
+  padding: 10px;
+  margin: 10px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border-width: 0px;
 }
 
 .submit-button {
-	color: #EEEDE4;
-	background-color: #FFA5AB;
-	padding: 10px;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin: 10px;
-	border-radius: 6px;
-	border-width: 0px;
+  color: #eeede4;
+  background-color: #ffa5ab;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+  border-radius: 6px;
+  border-width: 0px;
 }
