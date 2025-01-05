@@ -1,10 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 import './App.css';
 
 function App() {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [comment, setComment] = useState('');
+
+  const [context, setContext] = useState('');
+
+  useEffect(() => {
+    const queryParameters = new URLSearchParams(window.location.search);
+    const event = queryParameters.get("event");
+
+    if (typeof event === "string") {
+      setContext(event);
+    }
+  }, []);
 
   const handleSubmit = () => {
     alert(`Rating: ${rating}\nComment: ${comment}`);
@@ -14,7 +25,7 @@ function App() {
     <>
       <h1 className="shrikhand-regular">Vibe Check</h1>
       <div className="card">
-        <h3 className="bold">Share how you're feeling!</h3>
+        <h3 className="bold">Share how you're feeling! — {context}</h3>
         <div className="stars">
           {[1, 2, 3, 4, 5].map((star) => (
             <span
