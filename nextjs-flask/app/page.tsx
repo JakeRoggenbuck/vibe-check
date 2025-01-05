@@ -12,6 +12,34 @@ export default function Home() {
   const [context, setContext] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  const handleSubmit = async () => {
+
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/python/response`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        rating: rating,
+        comment: comment,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to submit data");
+    }
+
+    const data = await response.json();
+    console.log("Success:", data);
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+
+    setSubmitted(true);
+};
+
+
   useEffect(() => {
     const queryParameters = new URLSearchParams(window.location.search);
     const event = queryParameters.get("event");
@@ -21,7 +49,7 @@ export default function Home() {
     }
   }, []);
 
-  const handleSubmit = () => {
+  const test_handleSubmit = () => {
     console.log(`Rating: ${rating}\nComment: ${comment}`);
     setSubmitted(true);
   };
