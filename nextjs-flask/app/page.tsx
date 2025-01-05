@@ -35,13 +35,14 @@ export default function Home() {
   };
 
   function auto_height(elem: any) {
-    elem.style.height = "1px";
-    elem.style.height = `${elem.scrollHeight}px`;
+	  if (typeof elem !== "undefined") {
+		elem.style.height = "1px";
+		elem.style.height = `${elem.scrollHeight}px`;
+	  }
   }
 
   return (
-    <>
-      <div>
+      <div className="flex flex-col justify-center items-center h-screen text-center">
         <h1 className="shrikhand-regular">Vibe Check</h1>
         <div className="card">
           {!submitted ? (
@@ -69,7 +70,7 @@ export default function Home() {
                   <textarea
                     rows="2"
                     class="auto_height"
-                    onInput="auto_height(this)"
+					onInput={auto_height(this)}
                     type="text"
                     placeholder="Leave a comment..."
                     value={comment}
@@ -99,6 +100,5 @@ export default function Home() {
           )}
         </div>
       </div>
-    </>
   );
 }
