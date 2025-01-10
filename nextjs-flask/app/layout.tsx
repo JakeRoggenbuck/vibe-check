@@ -5,7 +5,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Vibe Check",
-  description: "Do a quick vibe check of a meeting or get some feedback after a presentation",
+  description:
+    "Do a quick vibe check of a meeting or get some feedback after a presentation",
 };
 
 export default function RootLayout({

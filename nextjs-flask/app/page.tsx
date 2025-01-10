@@ -26,7 +26,7 @@ export default function Home() {
         body: JSON.stringify({
           rating: rating,
           comment: comment,
-		  context: context
+          context: context,
         }),
       });
 
@@ -84,10 +84,12 @@ export default function Home() {
         <div className="card">
           {!submitted ? (
             <>
-              <h2 className="bold">Share how you're feeling! — {context}</h2>
-
               {find_event(context) ? (
                 <>
+                  <h2 className="bold">
+                    Share how you're feeling! — {context}
+                  </h2>
+
                   <div className="stars">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <span
@@ -121,7 +123,9 @@ export default function Home() {
                 </>
               ) : (
                 <>
-                  <h2 className="bold">Event "{context}" not found.</h2>
+                  <h2 className="bold">
+                    Do a quick vibe check to get useful realtime feedback!
+                  </h2>
                 </>
               )}
             </>
