@@ -26,6 +26,7 @@ export default function Home() {
         body: JSON.stringify({
           rating: rating,
           comment: comment,
+		  context: context
         }),
       });
 
