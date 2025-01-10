@@ -5,8 +5,15 @@
 [![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB&style=for-the-badge)](#)
 <!-- [![Build](https://img.shields.io/github/actions/workflow/status/jakeroggenbuck/vibe-check/npm.yml?branch=main&style=for-the-badge)](https://github.com/JakeRoggenbuck/vibe-check/actions) -->
 
-
 ![image](https://github.com/user-attachments/assets/c3585710-0d59-4a47-88ff-701ccebe3bf7)
+
+## Usage
+Navigate to a url with the parameter `event` to submit a response.
+
+https://the-vibe-check.vercel.app/?event=Test
+
+[![image](https://github.com/user-attachments/assets/c5f1b949-30e3-46b4-831e-90e2b4f12814)](https://the-vibe-check.vercel.app/?event=Test)
+
 
 ## TODO:
 - [x] Create a state that is the `vibe context` (e.g. A meeting) so that it can be displayed like `vibe for today's meeting` so these responses can all get aggregated in the same place.
