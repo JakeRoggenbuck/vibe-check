@@ -8,6 +8,7 @@ export default function Home() {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [comment, setComment] = useState("");
+  const [newPageName, setNewPageName] = useState("");
 
   const [context, setContext] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -46,6 +47,10 @@ export default function Home() {
 
     setSubmitted(true);
   };
+
+  const handleCreatePage = () => {
+	  console.log("New Page!");
+	}
 
   useEffect(() => {
     const queryParameters = new URLSearchParams(window.location.search);
@@ -126,6 +131,19 @@ export default function Home() {
                   <h2 className="bold">
                     Do a quick vibe check to get useful realtime feedback!
                   </h2>
+
+                  <input
+                    className="auto_height"
+                    placeholder="Create a page ..."
+                    value={newPageName}
+                    onChange={(e) => setNewPageName(e.target.value)}
+                  />
+
+                  <br />
+
+                  <button className="submit-button" onClick={handleCreatePage}>
+                    Create page
+                  </button>
                 </>
               )}
             </>
