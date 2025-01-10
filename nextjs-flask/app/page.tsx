@@ -14,6 +14,7 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async () => {
+    // If NEXT_PUBLIC_API_URL exists, add the python route to it, otherwise use exclusively the python route
     const url = process.env.NEXT_PUBLIC_API_URL
       ? `${process.env.NEXT_PUBLIC_API_URL}/api/python/response`
       : "api/python/response";
@@ -49,22 +50,20 @@ export default function Home() {
   };
 
   const handleCreatePage = () => {
-	  console.log("New Page!");
-	}
+    // Navigate to the newly created page
+    window.location.href = "?event=" + newPageName;
+  };
 
   useEffect(() => {
+    // Get all of the url query parameters
     const queryParameters = new URLSearchParams(window.location.search);
+    // Get just the query parameters called event
     const event = queryParameters.get("event");
 
     if (typeof event === "string") {
       setContext(event);
     }
   }, []);
-
-  const test_handleSubmit = () => {
-    console.log(`Rating: ${rating}\nComment: ${comment}`);
-    setSubmitted(true);
-  };
 
   const handleSubmitAgain = () => {
     setSubmitted(false);
