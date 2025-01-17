@@ -4,12 +4,6 @@ from pymongo import MongoClient
 from os import getenv
 
 
-MONGO_URI = getenv("MONGO_URI")
-client = MongoClient(MONGO_URI)
-db = client["mydatabase"]
-collection = db["mycollection"]
-
-
 app = Flask(__name__)
 CORS(app)
 
@@ -19,6 +13,11 @@ def post_data():
     data = request.json
 
     try:
+        MONGO_URI = getenv("MONGO_URI")
+        client = MongoClient(MONGO_URI)
+        db = client["mydatabase"]
+        collection = db["mycollection"]
+
         if not data:
             return jsonify({"message": "Error."})
 
