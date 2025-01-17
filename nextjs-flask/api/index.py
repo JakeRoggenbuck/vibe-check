@@ -10,9 +10,9 @@ CORS(app)
 
 @app.route('/api/python/response', methods=['POST'])
 def post_data():
-    data = request.json
-
     try:
+        data = request.json
+
         MONGO_URI = getenv("MONGO_URI")
         client = MongoClient(MONGO_URI)
         db = client["mydatabase"]
@@ -24,8 +24,8 @@ def post_data():
         collection.insert_one(data)
         return jsonify({"message": "Data received!"})
 
-    except Exception as e:
-        return jsonify({"message": e})
+    except Exception:
+        return jsonify({"message": "Nothing worked..."})
 
 
 if __name__ == '__main__':
