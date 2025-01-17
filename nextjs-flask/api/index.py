@@ -18,12 +18,15 @@ CORS(app)
 def post_data():
     data = request.json
 
-    if not data:
-        return jsonify({"message": "Error."})
+    try:
+        if not data:
+            return jsonify({"message": "Error."})
 
-    collection.insert_one(data)
+        collection.insert_one(data)
+        return jsonify({"message": "Data received!"})
 
-    return jsonify({"message": "Data received!"})
+    except Exception as e:
+        return jsonify({"message": e})
 
 
 if __name__ == '__main__':
