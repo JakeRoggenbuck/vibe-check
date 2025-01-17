@@ -32,8 +32,9 @@ def post_data():
         return jsonify({"message": e})
 
     try:
-        a = str(collection.insert_one(data))
-        return jsonify({"message": a})
+
+        # a = str(collection.insert_one(data))
+        return jsonify({"message": str(data)})
     except Exception as e:
         return jsonify({"message": e})
 
