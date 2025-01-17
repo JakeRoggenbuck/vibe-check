@@ -10,6 +10,11 @@ CORS(app)
 
 @app.route('/api/python/response', methods=['POST'])
 def post_data():
+
+    MONGO_URI = getenv("MONGO_URI")
+    if not MONGO_URI:
+        return jsonify({"message": "Cannot access MONGO_URI."})
+
     # try:
     #     data = request.json
     #
@@ -26,7 +31,7 @@ def post_data():
     #
     # except Exception:
     #     return jsonify({"message": "Nothing worked..."})
-    return jsonify({"message": "Nothing worked..."})
+    return jsonify({"message": MONGO_URI[0]})
 
 if __name__ == '__main__':
     app.run(port=5328, debug=True)
