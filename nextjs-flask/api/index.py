@@ -15,22 +15,27 @@ def post_data():
     if not MONGO_URI:
         return jsonify({"message": "Cannot access MONGO_URI."})
 
-    # try:
-    #     data = request.json
-    #
-    #     MONGO_URI = getenv("MONGO_URI")
-    #     client = MongoClient(MONGO_URI)
-    #     db = client["mydatabase"]
-    #     collection = db["mycollection"]
-    #
-    #     if not data:
-    #         return jsonify({"message": "Error."})
-    #
-    #     collection.insert_one(data)
-    #     return jsonify({"message": "Data received!"})
-    #
-    # except Exception:
-    #     return jsonify({"message": "Nothing worked..."})
+    data = None
+
+    try:
+        data = request.json
+    except Exception as e:
+        return jsonify({"message": e})
+
+    collection = None
+
+    try:
+        client = MongoClient(MONGO_URI)
+        db = client["mydatabase"]
+        collection = db["mycollection"]
+    except Exception as e:
+        return jsonify({"message": e})
+
+    try:
+        collection.insert_one(data)
+    except Exception as e:
+        return jsonify({"message": e})
+
     return jsonify({"message": MONGO_URI[0]})
 
 if __name__ == '__main__':
