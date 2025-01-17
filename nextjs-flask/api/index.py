@@ -23,7 +23,7 @@ def post_data():
 
     collection.insert_one(data)
 
-    return jsonify({"message": "Data received!", "data": data})
+    return jsonify({"message": "Data received!"})
 
 
 if __name__ == '__main__':
