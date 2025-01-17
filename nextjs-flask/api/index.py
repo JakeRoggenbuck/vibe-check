@@ -20,7 +20,7 @@ def post_data():
     try:
         data = request.json
     except Exception as e:
-        return jsonify({"message": e})
+        return jsonify({"message error with json": e})
 
     collection = None
 
@@ -33,8 +33,8 @@ def post_data():
 
     try:
 
-        # a = str(collection.insert_one(data))
-        return jsonify({"message": str(data)})
+        a = str(collection.insert_one(data))
+        return jsonify({"message": str(a)})
     except Exception as e:
         return jsonify({"message": e})
 
