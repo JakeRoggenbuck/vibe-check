@@ -4,6 +4,13 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import "./index.css";
 
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+);
+
 export default function Home() {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
@@ -13,12 +20,25 @@ export default function Home() {
   const [context, setContext] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  // Send data to supabase
+  async function saveData() {
+    const { data, error } = await supabase
+      .from("my_table")
+      .insert([{ key: "value" }]); // JSON Data
+
+    if (error) {
+      console.error("Error inserting data:", error);
+    } else {
+      console.log("Data saved:", data);
+    }
+  }
   const handleSubmit = async () => {
     // If NEXT_PUBLIC_API_URL exists, add the python route to it, otherwise use exclusively the python route
     const url = process.env.NEXT_PUBLIC_API_URL
       ? `${process.env.NEXT_PUBLIC_API_URL}/api/python/response`
       : "api/python/response";
 
+    // Send data to backend
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -31,6 +51,8 @@ export default function Home() {
           context: context,
         }),
       });
+
+      saveData();
 
       if (!response.ok) {
         throw new Error("Failed to submit data");
