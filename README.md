@@ -23,3 +23,10 @@ https://the-vibe-check.vercel.app/?event=Test
 - [x] Create a backend for different pages, their questions, and a place to submit the feedback
 
 - [ ] Create a frontend prompt when creating a new page that allows you to make multiple questions that can either be answered with stars or a comment box
+
+## Learning
+You can use row-level security to only enable insertions and disable deletions
+
+![image](https://github.com/user-attachments/assets/c0a1d7ed-8ab1-4d22-9644-1429dc63df21)
+
+![image](https://github.com/user-attachments/assets/21cc08a2-8c2a-4890-8534-670674376aa3)
