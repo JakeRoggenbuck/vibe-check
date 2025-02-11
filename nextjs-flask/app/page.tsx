@@ -23,8 +23,12 @@ export default function Home() {
   // Send data to supabase
   async function saveData() {
     const { data, error } = await supabase
-      .from("my_table")
-      .insert([{ key: "value" }]); // JSON Data
+      .from("responses")
+      .insert([{
+          rating: rating,
+          comment: comment,
+          context: context,
+        }]);
 
     if (error) {
       console.error("Error inserting data:", error);
@@ -32,6 +36,7 @@ export default function Home() {
       console.log("Data saved:", data);
     }
   }
+
   const handleSubmit = async () => {
     // If NEXT_PUBLIC_API_URL exists, add the python route to it, otherwise use exclusively the python route
     const url = process.env.NEXT_PUBLIC_API_URL
