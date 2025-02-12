@@ -138,7 +138,7 @@ export default function Home() {
                   </div>
 
                   <textarea
-                    rows={2}
+                    rows={5}
                     className="auto_height"
                     onInput={auto_height_func}
                     placeholder="Leave a comment..."
