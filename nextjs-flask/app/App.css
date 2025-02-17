@@ -30,10 +30,6 @@
   font-weight: bold;
 }
 
-.red-text {
-  color: #ffa5ab;
-}
-
 .auto_height {
   width: 100%;
   color: #333;
@@ -47,7 +43,6 @@
 
 .submit-button {
   color: #eeede4;
-  background-color: #ffa5ab;
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;

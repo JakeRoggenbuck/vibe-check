@@ -19,7 +19,7 @@ export default function RootLayout({
       <body
         className={
           inter.className +
-          " flex flex-col justify-center items-center h-screen text-center"
+          " flex flex-col justify-center items-center h-screen text-center bg-neutral"
         }
       >
         {children}
