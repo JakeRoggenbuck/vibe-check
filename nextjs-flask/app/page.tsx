@@ -111,7 +111,7 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center items-center h-screen text-center">
       <div className="flex-grow py-64">
-        <h1 className="shrikhand-regular">Vibe Check</h1>
+        <h1 className="shrikhand-regular text-primary">Vibe Check</h1>
         <div className="card">
           {!submitted ? (
             <>
@@ -148,7 +148,7 @@ export default function Home() {
 
                   <br />
 
-                  <button className="submit-button" onClick={handleSubmit}>
+                  <button className="submit-button bg-primary" onClick={handleSubmit}>
                     Submit
                   </button>
                 </>
@@ -167,7 +167,7 @@ export default function Home() {
 
                   <br />
 
-                  <button className="submit-button" onClick={handleCreatePage}>
+                  <button className="submit-button bg-primary" onClick={handleCreatePage}>
                     Create page
                   </button>
                 </>
@@ -186,7 +186,7 @@ export default function Home() {
       </div>
       <div className="w-full text-center mt-auto py-6">
         <a href="https://forms.gle/K7KDopHZ47tCvARE7">
-          <h2 className="bold red-text">Feedback Form</h2>
+          <h2 className="bold text-primary">Feedback Form</h2>
         </a>
       </div>
     </div>
