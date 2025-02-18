@@ -15,8 +15,6 @@ h1 {
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  /* background-color: #FEFAE0; */
-  background-color: #f6e3b4;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,7 +23,6 @@ h1 {
 }
 
 .shrikhand-regular {
-  color: #ffa5ab;
   font-family: "Shrikhand", serif;
   font-weight: 400;
   font-style: normal;
@@ -35,7 +32,7 @@ h1 {
 }
 
 .shrikhand-regular:hover {
-  filter: drop-shadow(0 0 1em #ffa5ab);
+  filter: drop-shadow(0 0 1em theme("colors.primary"));
 }
 
 a {
@@ -59,4 +56,98 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+@keyframes blob-wide {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  25% {
+    transform: translate(100px, -50px) scale(1.1);
+  }
+  50% {
+    transform: translate(0px, 100px) scale(0.9);
+  }
+  75% {
+    transform: translate(-100px, 50px) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blob-diagonal {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(80px, -80px) scale(1.15);
+  }
+  66% {
+    transform: translate(-80px, 80px) scale(0.85);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blob-float {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  20% {
+    transform: translate(-40px, 60px) scale(1.1);
+  }
+  40% {
+    transform: translate(60px, 40px) scale(0.9);
+  }
+  60% {
+    transform: translate(40px, -60px) scale(1.05);
+  }
+  80% {
+    transform: translate(-60px, -40px) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob-wide {
+  animation: blob-wide 18s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-blob-diagonal {
+  animation: blob-diagonal 15s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-blob-float {
+  animation: blob-float 12s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animation-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-3000 {
+  animation-delay: 3s;
+}
+
+.animation-delay-3500 {
+  animation-delay: 3.5s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-5000 {
+  animation-delay: 5s;
+}
+
+.animation-delay-6000 {
+  animation-delay: 6s;
 }

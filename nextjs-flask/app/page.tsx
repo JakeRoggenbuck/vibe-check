@@ -11,6 +11,24 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "",
 );
 
+const ModernBackground = () => {
+  return (
+    <div className="fixed inset-0 -z-10 overflow-hidden">
+      <div className="absolute -top-20 -left-16 w-96 h-96 bg-sky-500/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-wide" />
+      <div className="absolute top-1/4 -right-16 w-80 h-80 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-wide animation-delay-2000" />
+      <div className="absolute bottom-20 left-1/3 w-88 h-88 bg-cyan-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-wide animation-delay-4000" />
+
+      <div className="absolute top-1/2 right-1/4 w-72 h-72 bg-sky-300/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-diagonal" />
+      <div className="absolute -bottom-20 right-1/3 w-64 h-64 bg-blue-300/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-diagonal animation-delay-3000" />
+      <div className="absolute top-1/3 left-1/4 w-80 h-80 bg-sky-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-diagonal animation-delay-5000" />
+
+      <div className="absolute top-1/4 left-1/3 w-48 h-48 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-float animation-delay-1000" />
+      <div className="absolute bottom-1/3 right-1/4 w-56 h-56 bg-cyan-300/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-float animation-delay-3500" />
+      <div className="absolute top-2/3 left-1/2 w-40 h-40 bg-sky-400/20 rounded-full mix-blend-multiply filter blur-xl animate-blob-float animation-delay-6000" />
+    </div>
+  );
+};
+
 export default function Home() {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
@@ -110,8 +128,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen text-center">
+      <ModernBackground />
       <div className="flex-grow py-64">
-        <h1 className="shrikhand-regular">Vibe Check</h1>
+        <h1 className="shrikhand-regular text-primary">Vibe Check</h1>
         <div className="card">
           {!submitted ? (
             <>
@@ -148,7 +167,10 @@ export default function Home() {
 
                   <br />
 
-                  <button className="submit-button" onClick={handleSubmit}>
+                  <button
+                    className="submit-button bg-primary"
+                    onClick={handleSubmit}
+                  >
                     Submit
                   </button>
                 </>
@@ -167,7 +189,10 @@ export default function Home() {
 
                   <br />
 
-                  <button className="submit-button" onClick={handleCreatePage}>
+                  <button
+                    className="submit-button bg-primary"
+                    onClick={handleCreatePage}
+                  >
                     Create page
                   </button>
                 </>
@@ -186,7 +211,7 @@ export default function Home() {
       </div>
       <div className="w-full text-center mt-auto py-6">
         <a href="https://forms.gle/K7KDopHZ47tCvARE7">
-          <h2 className="bold red-text">Feedback Form</h2>
+          <h2 className="bold text-primary">Feedback Form</h2>
         </a>
       </div>
     </div>
