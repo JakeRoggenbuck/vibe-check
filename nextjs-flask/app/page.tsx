@@ -22,13 +22,13 @@ export default function Home() {
 
   // Send data to supabase
   async function saveData() {
-    const { data, error } = await supabase
-      .from("responses")
-      .insert([{
-          rating: rating,
-          comment: comment,
-          context: context,
-        }]);
+    const { data, error } = await supabase.from("responses").insert([
+      {
+        rating: rating,
+        comment: comment,
+        context: context,
+      },
+    ]);
 
     if (error) {
       console.error("Error inserting data:", error);
